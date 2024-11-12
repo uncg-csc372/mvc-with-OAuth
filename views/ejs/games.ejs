@@ -1,0 +1,34 @@
+<%- include('./partials/head') %>
+  <script src="/games-list.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+      <h1>All Games</h1>
+      <div id="root"><button id="new-game-btn">Add New Game</button>
+        <%- include('./partials/new-game-form') %>
+          <main class="items-container">
+            <% gamesList.forEach((game)=> { %>
+              <article class="item">
+                <div class="text">
+                  <h3>
+                    <%= game.id %>: <%= game.name %>
+                  </h3>
+                  <p>
+                    <%= game.release_year %>
+                  </p>
+                  <p>Platform:<a href="/games?attribute=platform&value=<%= game.platform %>">
+                      <%= game.platform %>
+                    </a></p>
+                  <p>Genre: <%= game.genre %>
+                  </p>
+                  <p>Publisher: <%= game.publisher %>
+                  </p><a href="/games/<%= game.id %>"><button>View</button></a>
+                </div>
+              </article>
+              <% }) %>
+          </main>
+      </div>
+  </body>
+
+  </html>

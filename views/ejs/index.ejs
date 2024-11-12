@@ -1,0 +1,19 @@
+<%- include('./partials/head') %>
+  <title>
+    <%= title %>
+  </title>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+    <% if(typeof user==='undefined' ){ %>   
+        <a href="/auth/google"><button class="btn">Login with Google</button></a>         
+       <% } %>
+
+          <main>
+            <h1>Games CRUD Demo App</h1>
+            <a href="/games/all">View Games List</a>
+          </main>
+  </body>
+
+  </html>

@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+      <li><a href="/games/all">All Games</a></li>
+      <li><a href="#">Second Page</a></li>
+      <li><a href="#">Third Page</a></li>
+      <% if(typeof user!='undefined' ){ %>
+        <li><span> <%= user.emails[0].value %></span>
+            <a href="/auth/logout">Logout</a></li>
+        <% } else{ %>
+            <li><a href="/auth/google">Login With Google</a></li>
+            <% } %>
+    </ul>
+  </nav>
